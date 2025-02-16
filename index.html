@@ -6,6 +6,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" type="image/png" href="images/redHeart.png">
 	<title>Romith ❤️ Nidhi - 20.04.2025</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="We are getting hitched - The dates are 21st & 29th of October '23 and we would like you to be a part of it." />
@@ -60,11 +61,15 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 	<style>
-		@media (max-width: 768px) {
-			.menu-1 {
-				display: none; /* Hide the menu on mobile view */
-			}
-		}
+@media (max-width: 768px) { 
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
+
+
+
+
 	</style>
 
 	</head>
@@ -79,13 +84,14 @@
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
 							<li class="active"><a href="index.html">Home</a></li>
-							<li class="active"><a href="#fh5co-event">Events</a></li>
-							<li class="active"><a href="#fh5co-gallery">Gallery</a></li>
+							<li class="active hide-on-mobile"><a href="#fh5co-event">Events</a></li>
+							<li class="active hide-on-mobile"><a href="#fh5co-gallery">Gallery</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</nav>
+		
 
 	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/bg.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
@@ -256,6 +262,13 @@
 				countdown: true
 			});
 		}
+
+		document.addEventListener("DOMContentLoaded", function() {
+			if (window.innerWidth <= 768) {
+				document.querySelector(".fh5co-nav").style.display = "none";
+			}
+		});
+
 
     });
 </script>
